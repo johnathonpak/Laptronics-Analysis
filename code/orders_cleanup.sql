@@ -1,12 +1,12 @@
 /*
-Fields with missing data in Orders_raw to investigate
-PURCHASE_TS                    2
-REFUND_TS                  88231
-USD_PRICE                     28
-CURRENCY                      51
-MARKETING_CHANNEL           1186
-ACCOUNT_CREATION_METHOD     1186
-COUNTRY_CODE                 116
+ Fields with missing data in Orders_raw to investigate
+ PURCHASE_TS                    2
+ REFUND_TS                  88231
+ USD_PRICE                     28
+ CURRENCY                      51
+ MARKETING_CHANNEL           1186
+ ACCOUNT_CREATION_METHOD     1186
+ COUNTRY_CODE                 116
 */
 
 -- Attempt to see if `customers` table can help populate country_code in `orders_raw`
@@ -27,16 +27,16 @@ WHERE
 -- Attempt to see if `customers` table can help populate marketing_channel or account_creation_method in `orders_raw`
 WITH temp AS (
   SELECT 
-    o.user_id,o.MARKETING_CHANNEL,
-    c.MARKETING_CHANNEL as cMarketingChan 
+    a.user_id,a.MARKETING_CHANNEL,
+    b.MARKETING_CHANNEL as cMarketingChan 
   FROM 
-    `data-analysis-projects-456521.laptronics_data.orders_raw` o
+    `data-analysis-projects-456521.laptronics_data.orders_raw` a
   LEFT JOIN 
     `data-analysis-projects-456521.laptronics_data.customers` c
   ON 
-    o.user_id = c.id  
+    a.user_id = b.id  
   WHERE 
-    o.MARKETING_CHANNEL IS NULL 
+    a.MARKETING_CHANNEL IS NULL 
 )
 
 SELECT 
@@ -47,14 +47,14 @@ FROM temp
 
 WITH temp2 AS (
   SELECT 
-    o.user_id,o.account_creation_method,
-    c.account_creation_method as cAccCreation
+    a.user_id,a.account_creation_method,
+    b.account_creation_method as cAccCreation
   FROM 
-    `data-analysis-projects-456521.laptronics_data.orders_raw` o
+    `data-analysis-projects-456521.laptronics_data.orders_raw` a
   LEFT JOIN 
-    `data-analysis-projects-456521.laptronics_data.customers` c
+    `data-analysis-projects-456521.laptronics_data.customers` b
   ON 
-    o.user_id = c.id  
+    a.user_id = b.id  
   WHERE 
     o.account_creation_method IS NULL 
 )
@@ -63,3 +63,57 @@ SELECT
   COUNT(CASE WHEN account_creation_method IS NULL THEN 1 END) as count_of_ordernull,
   COUNT(CASE WHEN cAccCreation IS NULL THEN 1 END) as count_of_custnull
 FROM temp2
+
+    
+/*
+    CURRENCY field research
+    Attempt to see if there is any coorolation to populate the data
+*/
+
+SELECT * FROM `data-analysis-projects-456521.laptronics_data.orders_raw` 
+WHERE CURRENCY IS NULL
+
+SELECT currency, count(currency)
+FROM `data-analysis-projects-456521.laptronics_data.orders_raw` 
+GROUP BY currency
+
+SELECT count(*)
+FROM `data-analysis-projects-456521.laptronics_data.orders_raw` 
+WHERE USD_PRICE = 0.0
+
+SELECT usd_price, local_price,currency,country_code
+FROM `data-analysis-projects-456521.laptronics_data.orders_raw` 
+WHERE USD_PRICE = 0.0
+AND CURRENCY IS NOT NULL
+
+/*
+    USD_PRICE Field research
+*/
+SELECT purchase_ts, usd_price, local_price, currency, country_code
+FROM `data-analysis-projects-456521.laptronics_data.orders_raw` 
+WHERE USD_PRICE IS NULL
+
+    
+    
+/*
+    PURCHASE_TS field research
+    Attempt to see if there is any coorolation to populate the data
+*/
+
+SELECT 
+    a.user_id,
+    a.order_id,
+    a.PURCHASE_TS,
+    b.id,
+    b.purchase_ts
+FROM 
+    `data-analysis-projects-456521.laptronics_data.orders_raw` a
+LEFT JOIN 
+    `data-analysis-projects-456521.laptronics_data.order_status` b
+ON 
+    a.ORDER_ID = b.id
+WHERE 
+    a.PURCHASE_TS IS NULL
+
+
+
