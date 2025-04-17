@@ -1,5 +1,5 @@
 /*
- Fields with missing data in Orders_raw to investigate
+ Fields with missing data in Orders_clean to investigate
  PURCHASE_TS                    2
  REFUND_TS                  88231
  USD_PRICE                     28
@@ -9,28 +9,28 @@
  COUNTRY_CODE                 116
 */
 
--- Attempt to see if `customers` table can help populate country_code in `orders_raw`
+-- Attempt to see if `customers` table can help populate country_code in `orders_clean`
 SELECT 
     o.user_id,o.country_code,
     c.country_code AS identified_country_code  -- Add country_code from customers table
 FROM 
-    `data-analysis-projects-456521.laptronics_data.orders_raw` o
+    `data-analysis-projects-456521.laptronics_data.orders_clean` o
 LEFT JOIN 
     `data-analysis-projects-456521.laptronics_data.customers` c
 ON 
     o.user_id = c.id  -- Joining on customer_id
 WHERE 
-    o.country_code IS NULL;  -- Only consider rows where country_code is NULL in orders_raw
+    o.country_code IS NULL;  -- Only consider rows where country_code is NULL in orders_clean
 
 
 
--- Attempt to see if `customers` table can help populate marketing_channel or account_creation_method in `orders_raw`
+-- Attempt to see if `customers` table can help populate marketing_channel or account_creation_method in `orders_clean`
 WITH temp AS (
   SELECT 
     a.user_id,a.MARKETING_CHANNEL,
     b.MARKETING_CHANNEL as cMarketingChan 
   FROM 
-    `data-analysis-projects-456521.laptronics_data.orders_raw` a
+    `data-analysis-projects-456521.laptronics_data.orders_clean` a
   LEFT JOIN 
     `data-analysis-projects-456521.laptronics_data.customers` c
   ON 
@@ -50,7 +50,7 @@ WITH temp2 AS (
     a.user_id,a.account_creation_method,
     b.account_creation_method as cAccCreation
   FROM 
-    `data-analysis-projects-456521.laptronics_data.orders_raw` a
+    `data-analysis-projects-456521.laptronics_data.orders_clean` a
   LEFT JOIN 
     `data-analysis-projects-456521.laptronics_data.customers` b
   ON 
@@ -70,19 +70,19 @@ FROM temp2
     Attempt to see if there is any coorolation to populate the data
 */
 
-SELECT * FROM `data-analysis-projects-456521.laptronics_data.orders_raw` 
+SELECT * FROM `data-analysis-projects-456521.laptronics_data.orders_clean` 
 WHERE CURRENCY IS NULL
 
 SELECT currency, count(currency)
-FROM `data-analysis-projects-456521.laptronics_data.orders_raw` 
+FROM `data-analysis-projects-456521.laptronics_data.orders_clean` 
 GROUP BY currency
 
 SELECT count(*)
-FROM `data-analysis-projects-456521.laptronics_data.orders_raw` 
+FROM `data-analysis-projects-456521.laptronics_data.orders_clean` 
 WHERE USD_PRICE = 0.0
 
 SELECT usd_price, local_price,currency,country_code
-FROM `data-analysis-projects-456521.laptronics_data.orders_raw` 
+FROM `data-analysis-projects-456521.laptronics_data.orders_clean` 
 WHERE USD_PRICE = 0.0
 AND CURRENCY IS NOT NULL
 
@@ -90,7 +90,7 @@ AND CURRENCY IS NOT NULL
     USD_PRICE Field research
 */
 SELECT purchase_ts, usd_price, local_price, currency, country_code
-FROM `data-analysis-projects-456521.laptronics_data.orders_raw` 
+FROM `data-analysis-projects-456521.laptronics_data.orders_clean` 
 WHERE USD_PRICE IS NULL
 
     
@@ -107,7 +107,7 @@ SELECT
     b.id,
     b.purchase_ts
 FROM 
-    `data-analysis-projects-456521.laptronics_data.orders_raw` a
+    `data-analysis-projects-456521.laptronics_data.orders_clean` a
 LEFT JOIN 
     `data-analysis-projects-456521.laptronics_data.order_status` b
 ON 
