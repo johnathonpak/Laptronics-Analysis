@@ -1,13 +1,13 @@
 /*
-SQL Code for Data Clean Up.
-
-Key Notes for cleanup:
-1. Table geo_lookup has incorrect/ missing field names
-2. Missing data in field REFUND_TS on cleaned version of orders_raw is normal
-3. Missing COUNTRY_CODE from orders_raw table can be possibly filled using other tables
-4. Missing MARKETING_CHANNEL and ACCOUNT_CREATION_METHOD from orders_raw table can be possibly filled using other tables. This also applies vice versa
+Fields with missing data in Orders_raw to investigate
+PURCHASE_TS                    2
+REFUND_TS                  88231
+USD_PRICE                     28
+CURRENCY                      51
+MARKETING_CHANNEL           1186
+ACCOUNT_CREATION_METHOD     1186
+COUNTRY_CODE                 116
 */
-
 
 -- Attempt to see if `customers` table can help populate country_code in `orders_raw`
 SELECT 
