@@ -10,6 +10,7 @@ You can access the database used in this project via [this BigQuery Dataset](htt
 
 
 SQL Queries performed to clean geo_location table can be [found here](code/geo_location_cleanup.sql)
+
 SQL Queries performed to clean and analyze orders_raw can be [found here](code/orders_cleanup.sql)
 
 # Executive Summary
