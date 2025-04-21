@@ -27,5 +27,8 @@ SQL Queries performed to clean `geo_location` table can be [found here](code/geo
 SQL Queries performed to clean and analyze `orders_raw` can be [found here](code/orders_cleanup.sql)
 
 ## Executive Summary
+![Dashboard](data/Summary.PNG)
+
+Interactive Tableau Dashboard can be [found here](https://public.tableau.com/views/LaptronicsAnalysis/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
 ### Overview of Findings
 
