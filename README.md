@@ -47,3 +47,22 @@ Interactive Tableau Dashboard can be [found here](https://public.tableau.com/vie
 
 **Loyalty Program Marketing Assessment**
 
+- Despite a large portion of the customer base enrolling in the loyalty program, its effect on repeat purchasing has been limited. Customer retention: Loyalty members have lower repeat purchase rates so far than non-members. **Only about 0.1% of loyalty program customers placed more than one order during the analysis period, compared to roughly 8% of non-loyalty customers who made repeat purchases.**
+- Loyalty members also spent less per order on average than others. Their **average order value was about $240, versus approximately $273 for non-members**. In aggregate, loyalty program members contributed around 39% of total revenue (despite being ~45% of customers), reflecting their lower spend per purchase.
+- Loyalty members’ share of total orders by year. The program saw rapid adoption – loyalty members accounted for only ~11% of orders in 2019, rising to ~55% by 2021. However, this growth plateaued in 2022 (loyalty members were ~52% of orders), suggesting that new member sign-ups and participation leveled off. While nearly half of transactions now come from loyalty program customers, this alone has not yet translated into superior retention or spend per customer.
+
+## Recommendations and Next Steps
+After a comprehensive analysis of Laptronics’ sales data, product performance, and customer behavior, three overarching themes emerged that guide our forward-looking strategy:
+
+### 1. Capitalize on Seasonal Peaks & Mid-Year Gaps
+- **Double down on Q4 promotions:** Develop targeted, tiered campaigns leading into November, possibly using early access incentives for loyalty members. Consider bundling high-margin accessories to increase AOV during the seasonal rush.
+- **Boost mid-year campaigns:** Introduce thematic or event-based promotions (e.g., back-to-school, summer sales) around underperforming months like February and July to smooth revenue distribution.
+
+### 2. Optimize Product Portfolio for Profitability & Satisfaction
+- **Expand successful product lines:** Consider expanding the product family of top sellers like monitors and headphones (e.g., new sizes or bundles) to build on existing demand.
+- **Review high-return SKUs:** Conduct a qualitative review (e.g., customer reviews or NPS) on high-value, high-return products to identify issues—whether it's product quality, delivery expectations, or mismatched advertising.
+
+### 3. Revamp Loyalty Program for Real Retention
+- **Reduce friction in the loyalty experience:** Simplify and streamline how customers earn and redeem rewards. Make sure using the program is effortless – for instance, auto-applying points or discounts and minimizing any hassle in the checkout or reward redemption process.
+- **Personalize member engagement:** Move beyond one-size-fits-all promotions by leveraging customer data to deliver segmented, targeted offers to loyalty members. Tailored rewards (such as discounts on categories a customer has shown interest in) and personalized communications can significantly boost engagement.
+- **Encourage early reward redemption:** Structure the program so that customers can earn and redeem a reward within their first few purchases. Experiencing a benefit early on can hook customers into coming back. Offering attainable rewards (e.g. a small free accessory or discount on the next purchase) will give new members a tangible reason to make a follow-up purchase and keep engaging with the program.
