@@ -43,7 +43,8 @@ Interactive Tableau Dashboard can be [found here](https://public.tableau.com/vie
 - **86.81% of the orders are from just three products**. The **best-performing product in terms of total sales was the Gaming Monitor**, with over $8.3M in revenue and relatively low refund rates (~6%). **Apple Airpods Headphones** followed, showing strong volume and revenue but slightly higher refund activity (~5.5%), potentially due to customer dissatisfaction or quality control variance. Lastly, **Macbook Air Laptop** had a large part of the revenue but low amount of orders for it, due to it's large price. 
 - High-value items such as the **MacBook Air and ThinkPad Laptop drove significant revenue but also showed above-average refund rates (~12%)**, flagging them as products with potential fulfillment or expectation mismatch issues. In contrast, low-cost accessories like Samsung charging cables had extremely low refund rates and high volume, making them reliable profit drivers despite their small per-unit margin.
 - In the headphones category, the **Bose headphones significantly underperformed, contributing to less than 1% of total revenue**, despite being $40 cheaper than the Apple Airpods, which is the second best performing product at $6.6M.
-
+  
+![Revenue](data/RevenuebyProduct.PNG)
 
 **Loyalty Program Marketing Assessment**
 
