@@ -32,3 +32,18 @@ SQL Queries performed to clean and analyze `orders_raw` can be [found here](code
 Interactive Tableau Dashboard can be [found here](https://public.tableau.com/views/LaptronicsAnalysis/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
 ### Overview of Findings
 
+**Laptronics Sales Trends**
+
+- Our sale's have **peaked in 2020Q2 with a revenue of $2.5M**. This corresponds with the worldwide economic recovery from the pandemic in 2019.
+- Beginning in 2021Q1 and onwards, revenue declined on a quarter-over-quarter basis for 8 quarters in a row. **Revenue hit a company lifetime low in 2022Q4 with a revenue of $509,918**.
+- Interestingly, average order value (AOV) stayed fairly consistent, **ranging between $215 and $275**, indicating a fairly fixed product mix and pricing structure. However, sudden dips or spikes in AOV within specific months may be due to major product launches or temporary discounting strategies.
+
+**Product-Level Performance Analysis**
+
+- **86.81% of the orders are from just three products**. The **best-performing product in terms of total sales was the Gaming Monitor**, with over $8.3M in revenue and relatively low refund rates (~6%). **Apple Airpods Headphones** followed, showing strong volume and revenue but slightly higher refund activity (~5.5%), potentially due to customer dissatisfaction or quality control variance. Lastly, **Macbook Air Laptop** had a large part of the revenue but low amount of orders for it, due to it's large price. 
+- High-value items such as the **MacBook Air and ThinkPad Laptop drove significant revenue but also showed above-average refund rates (~12%)**, flagging them as products with potential fulfillment or expectation mismatch issues. In contrast, low-cost accessories like Samsung charging cables had extremely low refund rates and high volume, making them reliable profit drivers despite their small per-unit margin.
+- In the headphones category, the **Bose headphones significantly underperformed, contributing to less than 1% of total revenue**, despite being $40 cheaper than the Apple Airpods, which is the second best performing product at $6.6M.
+
+
+**Loyalty Program Marketing Assessment**
+
